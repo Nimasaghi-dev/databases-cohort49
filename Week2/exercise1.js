@@ -15,7 +15,7 @@ const main = async () => {
 
         await connection.query(dropDatabase);
         await connection.query(createDatabase);
-        await connection.query("USE assignment");
+        await connection.query("USE author_db");
         console.log("Database created");
 
         const createTableAuthor =
@@ -37,21 +37,21 @@ const main = async () => {
 
         const insertQuery = `
             INSERT INTO author (author_name, date_of_birth, h_index, gender, mentor) VALUES
-            ('Lubna', '1990-06-01', 10, 'f', 1),
-            ('Salwa', '1991-12-01', 9, 'f', 2),
-            ('Jim', '1992-11-01', 8, 'm', 3),
-            ('Mo', '1993-12-20', 7, 'm', 4),
-            ('Max', '1994-09-04', 6, 'm', 5),
-            ('Alia', '1995-07-04', 5, 'f', 6),
-            ('Seba', '1996-09-04', 4, 'f', 1),
-            ('Ali', '1997-07-04', 3, 'm', 7),
-            ('Sara', '1998-09-04', 2, 'f', 8),
-            ('Saeed', '1999-07-04', 1, 'm', 9),
-            ('Lamis', '1998-09-04', 2, 'f', 2),
-            ('Hani', '1999-07-04', 1, 'm', 3),
-            ('Lina', '1998-09-04', 2, 'f', 4),
-            ('Hassan', '1999-07-04', 1, 'm', 5),
-            ('Buthina', '1995-03-03', 8, 'f', 6);
+            ('John', '1995-03-19', 10, 'f', 1),
+            ('Mark', '1991-12-11', 9, 'f', 2),
+            ('Tim', '1992-12-21', 8, 'm', 3),
+            ('Jo', '1990-12-29', 7, 'm', 4),
+            ('Max', '1994-02-19', 6, 'm', 5),
+            ('Nima', '1995-04-14', 5, 'f', 6),
+            ('Fred', '1997-12-16', 4, 'f', 1),
+            ('Kim', '1992-01-04', 3, 'm', 7),
+            ('Sara', '1988-10-03', 2, 'f', 8),
+            ('Chester', '2000-07-14', 1, 'm', 9),
+            ('Kevin', '1998-11-24', 2, 'f', 2),
+            ('Fill', '1999-02-14', 1, 'm', 3),
+            ('Liam', '1982-03-01', 2, 'f', 4),
+            ('Liana', '1998-10-06', 1, 'm', 5),
+            ('Withney', '1992-01-02', 8, 'f', 6);
         `;
 
         await connection.query(insertQuery);
